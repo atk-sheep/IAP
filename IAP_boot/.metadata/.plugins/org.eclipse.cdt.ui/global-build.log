@@ -1,0 +1,1634 @@
+16:03:49 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:216:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  216 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:219:13: warning: comparison of distinct pointer types lacks a cast
+  219 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:270:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:270:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:270:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:273:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  273 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:273:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:278:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  278 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:278:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:283:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  283 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:283:11: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:52:23: warning: unsigned conversion from 'int' to 'uint16_t' {aka 'short unsigned int'} changes value from '112640' to '47104' [-Woverflow]
+   52 | #define USART_REC_LEN 110*1024    //预留128k接收APP
+      |                       ^~~~~~~~
+../Core/Src/freertos.c:286:55: note: in expansion of macro 'USART_REC_LEN'
+  286 |           HAL_UART_Receive_DMA(&huart1, USART_RX_BUF, USART_REC_LEN);
+      |                                                       ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 105040	    472	 379192	 484704	  76560	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+16:04:02 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-size  bootloader.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105040	    472	 379192	 484704	  76560	bootloader.elf
+Finished building: default.size.stdout
+ 
+16:07:48 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:216:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  216 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:219:13: warning: comparison of distinct pointer types lacks a cast
+  219 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:270:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:270:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:270:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:273:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  273 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:273:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:278:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  278 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:278:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:283:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  283 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:283:11: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:52:23: warning: unsigned conversion from 'int' to 'uint16_t' {aka 'short unsigned int'} changes value from '112640' to '47104' [-Woverflow]
+   52 | #define USART_REC_LEN 110*1024    //预留128k接收APP
+      |                       ^~~~~~~~
+../Core/Src/freertos.c:286:55: note: in expansion of macro 'USART_REC_LEN'
+  286 |           HAL_UART_Receive_DMA(&huart1, USART_RX_BUF, USART_REC_LEN);
+      |                                                       ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 100960	    468	 264444	 365872	  59530	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+16:09:14 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:216:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  216 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:219:13: warning: comparison of distinct pointer types lacks a cast
+  219 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:270:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:270:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:270:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:273:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  273 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:273:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:278:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  278 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:278:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:283:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  283 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:283:11: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:52:23: warning: unsigned conversion from 'int' to 'uint16_t' {aka 'short unsigned int'} changes value from '112640' to '47104' [-Woverflow]
+   52 | #define USART_REC_LEN 110*1024    //预留128k接收APP
+      |                       ^~~~~~~~
+../Core/Src/freertos.c:286:55: note: in expansion of macro 'USART_REC_LEN'
+  286 |           HAL_UART_Receive_DMA(&huart1, USART_RX_BUF, USART_REC_LEN);
+      |                                                       ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 100960	    468	 264444	 365872	  59530	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+16:32:14 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-size  bootloader.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 100960	    468	 264444	 365872	  59530	bootloader.elf
+Finished building: default.size.stdout
+ 
+17:08:30 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-size  bootloader.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 100960	    468	 264444	 365872	  59530	bootloader.elf
+Finished building: default.size.stdout
+ 
+17:15:30 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/iap.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/iap.d" -MT"Core/Src/iap.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/iap.o"
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 101008	    468	 264444	 365920	  59560	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+17:19:38 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/iap.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/iap.d" -MT"Core/Src/iap.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/iap.o"
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 100960	    468	 264444	 365872	  59530	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+17:21:35 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:216:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  216 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:219:13: warning: comparison of distinct pointer types lacks a cast
+  219 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:270:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:270:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:270:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:273:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  273 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:273:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:278:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  278 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:278:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:283:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  283 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:283:11: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:52:23: warning: unsigned conversion from 'int' to 'uint16_t' {aka 'short unsigned int'} changes value from '112640' to '47104' [-Woverflow]
+   52 | #define USART_REC_LEN 110*1024    //预留128k接收APP
+      |                       ^~~~~~~~
+../Core/Src/freertos.c:286:55: note: in expansion of macro 'USART_REC_LEN'
+  286 |           HAL_UART_Receive_DMA(&huart1, USART_RX_BUF, USART_REC_LEN);
+      |                                                       ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 100864	    468	 264444	 365776	  594d0	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+17:23:09 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:216:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  216 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:219:13: warning: comparison of distinct pointer types lacks a cast
+  219 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:270:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:270:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:270:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:273:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  273 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:273:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:278:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  278 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:278:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:283:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  283 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:283:11: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:52:23: warning: unsigned conversion from 'int' to 'uint16_t' {aka 'short unsigned int'} changes value from '112640' to '47104' [-Woverflow]
+   52 | #define USART_REC_LEN 110*1024    //预留128k接收APP
+      |                       ^~~~~~~~
+../Core/Src/freertos.c:286:55: note: in expansion of macro 'USART_REC_LEN'
+  286 |           HAL_UART_Receive_DMA(&huart1, USART_RX_BUF, USART_REC_LEN);
+      |                                                       ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 105040	    472	 379192	 484704	  76560	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+17:39:11 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:216:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  216 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:219:13: warning: comparison of distinct pointer types lacks a cast
+  219 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:270:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:270:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:270:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:273:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  273 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:273:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:278:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  278 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:278:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:283:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  283 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:283:11: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:52:23: warning: unsigned conversion from 'int' to 'uint16_t' {aka 'short unsigned int'} changes value from '112640' to '47104' [-Woverflow]
+   52 | #define USART_REC_LEN 110*1024    //预留128k接收APP
+      |                       ^~~~~~~~
+../Core/Src/freertos.c:286:55: note: in expansion of macro 'USART_REC_LEN'
+  286 |           HAL_UART_Receive_DMA(&huart1, USART_RX_BUF, USART_REC_LEN);
+      |                                                       ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 100960	    468	 264444	 365872	  59530	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.bin
+Finished building: bootloader.hex
+ 
+ 
+Finished building: bootloader.list
+ 
+17:41:07 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:216:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  216 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:219:13: warning: comparison of distinct pointer types lacks a cast
+  219 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:270:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:270:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:270:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:273:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  273 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:273:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:278:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  278 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:278:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:283:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  283 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:283:11: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:52:23: warning: unsigned conversion from 'int' to 'uint16_t' {aka 'short unsigned int'} changes value from '112640' to '47104' [-Woverflow]
+   52 | #define USART_REC_LEN 110*1024    //预留128k接收APP
+      |                       ^~~~~~~~
+../Core/Src/freertos.c:286:55: note: in expansion of macro 'USART_REC_LEN'
+  286 |           HAL_UART_Receive_DMA(&huart1, USART_RX_BUF, USART_REC_LEN);
+      |                                                       ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 105040	    472	 379192	 484704	  76560	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+17:41:30 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-size  bootloader.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105040	    472	 379192	 484704	  76560	bootloader.elf
+Finished building: default.size.stdout
+ 
+17:44:33 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:216:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  216 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:219:13: warning: comparison of distinct pointer types lacks a cast
+  219 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:270:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:270:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:270:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:273:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  273 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:273:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:278:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  278 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:278:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:283:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  283 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:283:11: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:52:23: warning: unsigned conversion from 'int' to 'uint16_t' {aka 'short unsigned int'} changes value from '112640' to '47104' [-Woverflow]
+   52 | #define USART_REC_LEN 110*1024    //预留128k接收APP
+      |                       ^~~~~~~~
+../Core/Src/freertos.c:286:55: note: in expansion of macro 'USART_REC_LEN'
+  286 |           HAL_UART_Receive_DMA(&huart1, USART_RX_BUF, USART_REC_LEN);
+      |                                                       ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 100960	    468	 264444	 365872	  59530	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+17:58:59 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-size  bootloader.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 100960	    468	 264444	 365872	  59530	bootloader.elf
+Finished building: default.size.stdout
+ 
+18:01:50 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:216:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  216 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:219:13: warning: comparison of distinct pointer types lacks a cast
+  219 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:270:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:270:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:270:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:273:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  273 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:273:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:278:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  278 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:278:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:283:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  283 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:283:11: note: include '<string.h>' or provide a declaration of 'memset'
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 105040	    472	 299320	 404832	  62d60	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+18:05:35 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:216:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  216 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:219:13: warning: comparison of distinct pointer types lacks a cast
+  219 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:270:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:270:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:270:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:273:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  273 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:273:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:278:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  278 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:278:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:283:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  283 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:283:11: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:285:31: warning: spurious trailing '%' in format [-Wformat=]
+  285 |           printf("applength: d%", applength);
+      |                               ^
+../Core/Src/freertos.c:285:18: warning: too many arguments for format [-Wformat-extra-args]
+  285 |           printf("applength: d%", applength);
+      |                  ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 105072	    472	 299320	 404864	  62d80	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+18:06:19 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:216:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  216 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:219:13: warning: comparison of distinct pointer types lacks a cast
+  219 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:270:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:270:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:270:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:273:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  273 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:273:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:278:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  278 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:278:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:283:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  283 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:283:11: note: include '<string.h>' or provide a declaration of 'memset'
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 105072	    472	 299320	 404864	  62d80	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+18:07:22 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:216:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  216 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:219:13: warning: comparison of distinct pointer types lacks a cast
+  219 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:270:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:270:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:270:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:273:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  273 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:273:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:278:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  278 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:278:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:283:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  283 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:283:11: note: include '<string.h>' or provide a declaration of 'memset'
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 105072	    472	 299320	 404864	  62d80	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.bin
+Finished building: bootloader.hex
+ 
+ 
+Finished building: bootloader.list
+ 
+18:08:30 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:216:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  216 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:219:13: warning: comparison of distinct pointer types lacks a cast
+  219 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:270:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:270:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  270 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:270:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:273:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  273 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:273:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:273:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:278:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  278 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:278:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:283:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  283 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:283:11: note: include '<string.h>' or provide a declaration of 'memset'
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 100976	    468	 264444	 365888	  59540	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+18:20:54 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:218:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  218 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:221:13: warning: comparison of distinct pointer types lacks a cast
+  221 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:271:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:271:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:271:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:274:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  274 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:274:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:279:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  279 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:279:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:284:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  284 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:284:11: note: include '<string.h>' or provide a declaration of 'memset'
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 105200	    472	 299328	 405000	  62e08	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+10:39:04 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+arm-none-eabi-gcc "../Core/Src/iap.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/iap.d" -MT"Core/Src/iap.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/iap.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:218:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  218 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:221:13: warning: comparison of distinct pointer types lacks a cast
+  221 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:271:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:271:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:271:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:274:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  274 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:274:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:279:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  279 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:279:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:284:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  284 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:284:11: note: include '<string.h>' or provide a declaration of 'memset'
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 100976	    468	 264444	 365888	  59540	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+10:39:55 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/iap.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/iap.d" -MT"Core/Src/iap.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/iap.o"
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 101008	    468	 264444	 365920	  59560	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+10:43:40 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+arm-none-eabi-gcc "../Core/Src/iap.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/iap.d" -MT"Core/Src/iap.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/iap.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:218:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  218 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:221:13: warning: comparison of distinct pointer types lacks a cast
+  221 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:271:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:271:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:271:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:274:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  274 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:274:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:279:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  279 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:279:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:284:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  284 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:284:11: note: include '<string.h>' or provide a declaration of 'memset'
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 105232	    472	 299328	 405032	  62e28	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+10:46:21 **** Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+arm-none-eabi-gcc "../Core/Src/iap.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/iap.d" -MT"Core/Src/iap.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/iap.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/myiic.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/myiic.d" -MT"Core/Src/myiic.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/myiic.o"
+arm-none-eabi-gcc "../Core/Src/pcf8574.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/pcf8574.d" -MT"Core/Src/pcf8574.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/pcf8574.o"
+arm-none-eabi-gcc "../Core/Src/quadspi.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/quadspi.d" -MT"Core/Src/quadspi.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/quadspi.o"
+arm-none-eabi-gcc "../Core/Src/w25q256.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/w25q256.d" -MT"Core/Src/w25q256.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/w25q256.o"
+../Core/Src/quadspi.c: In function 'QSPI_Send_CMD':
+../Core/Src/quadspi.c:170:23: error: 'QSPI_Handler' undeclared (first use in this function)
+  170 |     HAL_QSPI_Command(&QSPI_Handler,&Cmdhandler,5000);
+      |                       ^~~~~~~~~~~~
+../Core/Src/quadspi.c:170:23: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/quadspi.c: In function 'QSPI_Receive':
+../Core/Src/quadspi.c:180:5: error: 'QSPI_Handler' undeclared (first use in this function)
+  180 |     QSPI_Handler.Instance->DLR=datalen-1;                           //�?置数�?�长度
+      |     ^~~~~~~~~~~~
+../Core/Src/quadspi.c: In function 'QSPI_Transmit':
+../Core/Src/quadspi.c:192:5: error: 'QSPI_Handler' undeclared (first use in this function)
+  192 |     QSPI_Handler.Instance->DLR=datalen-1;                            //�?置数�?�长度
+      |     ^~~~~~~~~~~~
+../Core/Src/quadspi.c: In function 'QSPI_Receive':
+../Core/Src/quadspi.c:183:1: warning: control reaches end of non-void function [-Wreturn-type]
+  183 | }
+      | ^
+../Core/Src/quadspi.c: In function 'QSPI_Transmit':
+../Core/Src/quadspi.c:195:1: warning: control reaches end of non-void function [-Wreturn-type]
+  195 | }
+      | ^
+make: *** [Core/Src/subdir.mk:73: Core/Src/quadspi.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:218:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  218 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:221:13: warning: comparison of distinct pointer types lacks a cast
+  221 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:271:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:271:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:271:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:274:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  274 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:274:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:279:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  279 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:279:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:284:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  284 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:284:11: note: include '<string.h>' or provide a declaration of 'memset'
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+10:48:19 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/quadspi.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/quadspi.d" -MT"Core/Src/quadspi.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/quadspi.o"
+../Core/Src/quadspi.c: In function 'QSPI_Receive':
+../Core/Src/quadspi.c:180:5: error: 'QSPI_Handler' undeclared (first use in this function)
+  180 |     QSPI_Handler.Instance->DLR=datalen-1;                           //�?置数�?�长度
+      |     ^~~~~~~~~~~~
+../Core/Src/quadspi.c:180:5: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/quadspi.c: In function 'QSPI_Transmit':
+../Core/Src/quadspi.c:192:5: error: 'QSPI_Handler' undeclared (first use in this function)
+  192 |     QSPI_Handler.Instance->DLR=datalen-1;                            //�?置数�?�长度
+      |     ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:73: Core/Src/quadspi.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+10:49:31 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/quadspi.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/quadspi.d" -MT"Core/Src/quadspi.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/quadspi.o"
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 105232	    472	 299328	 405032	  62e28	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.bin
+Finished building: bootloader.hex
+ 
+Finished building: bootloader.list
+ 
+ 
+10:56:11 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+arm-none-eabi-gcc "../Core/Src/iap.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/iap.d" -MT"Core/Src/iap.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/iap.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:218:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  218 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:221:13: warning: comparison of distinct pointer types lacks a cast
+  221 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:271:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:271:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:271:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:274:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  274 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:274:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:279:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  279 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:279:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:284:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  284 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:284:11: note: include '<string.h>' or provide a declaration of 'memset'
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 105232	    472	 299328	 405032	  62e28	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+11:17:22 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-size  bootloader.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105232	    472	 299328	 405032	  62e28	bootloader.elf
+Finished building: default.size.stdout
+ 
+11:18:21 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:218:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  218 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:221:13: warning: comparison of distinct pointer types lacks a cast
+  221 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:271:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:271:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:271:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:274:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  274 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:274:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:279:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  279 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:279:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:284:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  284 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:284:11: note: include '<string.h>' or provide a declaration of 'memset'
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 105272	    472	 299328	 405072	  62e50	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+ 
+Finished building: bootloader.list
+ 
+13:24:39 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:218:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  218 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:221:13: warning: comparison of distinct pointer types lacks a cast
+  221 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:271:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:271:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:271:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:274:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  274 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:274:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:279:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  279 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:279:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:284:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  284 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:284:11: note: include '<string.h>' or provide a declaration of 'memset'
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+  38444	    120	 265800	 304364	  4a4ec	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+Finished building: bootloader.list
+ 
+ 
+ 
+13:28:28 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:218:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  218 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:221:13: warning: comparison of distinct pointer types lacks a cast
+  221 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:271:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:271:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:271:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:274:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  274 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:274:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:279:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  279 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:279:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:284:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  284 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:284:11: note: include '<string.h>' or provide a declaration of 'memset'
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 105272	    472	 299328	 405072	  62e50	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+Finished building: bootloader.list
+ 
+ 

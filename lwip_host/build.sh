@@ -1,0 +1,1 @@
+gcc tcp_flash.c services.c -I./ -pthread -o demo

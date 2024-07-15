@@ -1,0 +1,71 @@
+13:28:28 **** Incremental Build of configuration Debug for project bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F767xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../LWIP/App -I../LWIP/Target -I../Middlewares/Third_Party/LwIP/src/include -I../Middlewares/Third_Party/LwIP/system -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -I../Drivers/BSP/Components/lan8742 -I../Middlewares/Third_Party/LwIP/src/include/netif/ppp -I../Middlewares/Third_Party/LwIP/src/include/lwip -I../Middlewares/Third_Party/LwIP/src/include/lwip/apps -I../Middlewares/Third_Party/LwIP/src/include/lwip/priv -I../Middlewares/Third_Party/LwIP/src/include/lwip/prot -I../Middlewares/Third_Party/LwIP/src/include/netif -I../Middlewares/Third_Party/LwIP/src/include/compat/posix -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/net -I../Middlewares/Third_Party/LwIP/src/include/compat/posix/sys -I../Middlewares/Third_Party/LwIP/src/include/compat/stdc -I../Middlewares/Third_Party/LwIP/system/arch -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c:53:1: warning: 'at' attribute directive ignored [-Wattributes]
+   53 | u8 USART_RX_BUF[USART_REC_LEN] __attribute__ ((at(0X20040000)));
+      | ^~
+../Core/Src/freertos.c: In function 'hextodec':
+../Core/Src/freertos.c:218:25: warning: pointer targets in passing argument 1 of 'strtol' differ in signedness [-Wpointer-sign]
+  218 |     (*decimal) = strtol(hex_string, &ptr, 16);
+      |                         ^~~~~~~~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../Middlewares/Third_Party/LwIP/system/arch/cc.h:36,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:48,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:40,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/opt.h:52,
+                 from ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h:40,
+                 from ../Core/Inc/pcf8574.h:3,
+                 from ../Core/Src/freertos.c:28:
+C:\my_workspace\my_software\stm32cubeide\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
+../Core/Src/freertos.c:221:13: warning: comparison of distinct pointer types lacks a cast
+  221 |     if (ptr == hex_string) {
+      |             ^~
+../Core/Src/freertos.c: In function 'StartTask03':
+../Core/Src/freertos.c:271:11: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:34:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   33 | #include "iap.h"
+  +++ |+#include <string.h>
+   34 | #include <stdlib.h>
+../Core/Src/freertos.c:271:11: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  271 |           memcpy(lenbuf, cmdbuf+3, sizeof(lenbuf)-1);
+      |           ^~~~~~
+../Core/Src/freertos.c:271:11: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/freertos.c:274:13: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+  274 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:274:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+../Core/Src/freertos.c:274:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:279:13: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  279 |             memset(cmdbuf, 0, sizeof(cmdbuf));
+      |             ^~~~~~
+../Core/Src/freertos.c:279:13: note: include '<string.h>' or provide a declaration of 'memset'
+../Core/Src/freertos.c:284:11: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+  284 |           memset(cmdbuf, 0, sizeof(cmdbuf));
+      |           ^~~~~~
+../Core/Src/freertos.c:284:11: note: include '<string.h>' or provide a declaration of 'memset'
+arm-none-eabi-gcc -o "bootloader.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\my_workspace\stm32_ws\IAP_boot\bootloader\STM32F767IGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="bootloader.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: bootloader.elf
+ 
+arm-none-eabi-size  bootloader.elf 
+arm-none-eabi-objdump -h -S bootloader.elf  > "bootloader.list"
+arm-none-eabi-objcopy  -O ihex bootloader.elf  "bootloader.hex"
+arm-none-eabi-objcopy  -O binary bootloader.elf  "bootloader.bin"
+   text	   data	    bss	    dec	    hex	filename
+ 105272	    472	 299328	 405072	  62e50	bootloader.elf
+Finished building: default.size.stdout
+ 
+Finished building: bootloader.hex
+Finished building: bootloader.bin
+ 
+Finished building: bootloader.list
+ 
+ 
+
+13:28:36 Build Finished. 0 errors, 9 warnings. (took 7s.675ms)
+
